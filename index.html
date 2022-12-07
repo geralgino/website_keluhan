@@ -1,0 +1,192 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluhan</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        font-face {
+            font-family: '';
+        }
+
+        .logo {
+            width: 80%;
+        }
+
+        .text-sub-hero {
+            font-size: 28px;
+        }
+
+        .content {
+            margin-top: 3em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <!-- Navbar -->
+    <!--
+        <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+            <div class="container-fluid">
+                <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon d-flex justify-content-start align-items-center">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="#intro">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
+                                rel="nofollow" target="_blank">Learn Bootstrap 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download
+                                MDB UI KIT</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        
+
+        
+        <div id="intro" class="bg-image" style="
+                      background-image: url('/assets/lapor.jpg');
+                      height: 100vh;
+                      ">
+            <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.8)">
+                <div class="container d-flex align-items-center text-center h-100">
+                    <div>
+                        <h1 class="mb-5">Selamat Datang Di Unit Pelayanan Laporan Keluhan Masyarakat</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </header>
+        -->
+
+    <div class="hero-image mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col" style="margin-top: 18%">
+                    <h1 class="">Unit Pelayanan Laporan Keluhan Masyarakat</h1>
+                    <h1 class="text-sub-hero mt-5 text-black-50">LaporKeluh merupakan fasilitas bagi masyarakat
+                        kelurahan Maguwoharjo untuk menyampaikan Keluhan, Pertanyaan,
+                        Informasi, maupun usul/saran guna pengembangan pelayanan Kelurahan Maguwoharjo.
+                    </h1>
+
+                </div>
+                <div class="col">
+                    <img src="assets/keluh.jpg" width="500" height="500" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: F1F1F1;">
+        <div class="container">
+            <P>Untuk mengirimkan pesan anda melalui website ini, silahkan terlebih dahulu mengisi form di
+                bawah ini:
+            </P>
+            <h4>Form Masukan Informasi dan Keluhan</h4>
+            <form class="row g-2">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="">Judul Laporan</label>
+                        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="">Pilih Kategori</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Kategori</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text\" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Isi Laporan</label>
+                    </div>
+                    <br>
+                    <h5>Belum Terdaftar?</h5>
+                    <a href="" class="btn btn-primary">
+                        Buat Akun Baru
+                    </a>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="">Tempat Kejadian</label>
+                        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="">Foto</label>
+                        <input type="file" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="">Tanggal</label>
+                        <input type="datetime-local" name="" id="" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- Footer -->
+
+</body>
+
+</html>
+
+<script>
+    $(function () {
+        $("#navbar").load("navbar.html");
+        $("#footer").load("footer.html");
+    });
+</script>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        font-face {
+            font-family: 'Poppins';
+        }
+
+        .logo {
+            width: 80%;
+        }
+
+        .text-sub-hero {
+            font-size: 28px;
+        }
+
+        .content {
+            margin-top: 3em;
+        }
+    </style>
+
+    <title>Register</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <!-- Navbar -->
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+
+            <div class="row d-flex justify-content-center align-items-center h-100">
+
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="assets/keluh.jpg" class="img-fluid" alt="Sample image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form name="formRegister" method="post" onsubmit="return validateForm()">
+
+
+
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0">DAFTAR</p>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Nama Pertama</label>
+                            <input type="text" name="first_name" id="first_name" class="form-control form-control-lg" />
+
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Nama Terakhir</label>
+                            <input type="text" name="last_name" id="last_name" class="form-control form-control-lg" />
+
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Email</label>
+                            <input type="email" name="email" id="email" class="form-control form-control-lg" />
+
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">NIK</label>
+                            <input type="text" name="nik" id="nik" class="form-control form-control-lg" />
+
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">No Hp</label>
+                            <input type="text" name="no_hp" id="no_hp" class="form-control form-control-lg" />
+
+                        </div>
+
+
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4">Password</label>
+                            <input type="password" name="password" id="password" class="form-control form-control-lg" />
+
+                        </div>
+
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4">Ulangi Password</label>
+                            <input type="password" name="repassword" id="repassword"
+                                class="form-control form-control-lg" />
+
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mb-0">
+                                <div class="text-center text-lg-start mt-4 pt-2">
+                                    <button type="submit" class="btn btn-primary btn-lg"
+                                        style="padding-left: 2.5rem; padding-right: 2.5rem;">Daftar</button>
+                                    <p class="small fw-bold mt-2 pt-1 mb-0">Sudah Terdaftar? <a
+                                            href="/login.html">Masuk</a></p>
+                                </div>
+                            </div>
+                            <a href="/forgotpassword.html" class="text-body">Lupa Password?</a>
+                        </div>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <div id="footer" style="margin-top: 300px;"></div>
+    <!-- Footer -->
+
+</body>
+
+</html>
+
+<script>
+    $(function () {
+        $("#navbar").load("navbar.html");
+        $("#footer").load("footer.html");
+    })
+    function validateForm() {
+
+
+        var no_hp = document.forms["formRegister"]["no_hp"].value;
+        var nik = document.forms["formRegister"]["nik"].value;
+
+        var number = /^[0-9]+$/;
+
+
+      
+       
+
+
+        if (document.forms["formRegister"]["first_name"].value == "") {
+            alert("Nama Pertama Tidak Boleh Kosong");
+            document.forms["formRegister"]["first_name"].focus();
+            return false;
+        }
+        if (document.forms["formRegister"]["last_name"].value == "") {
+            alert("Nama Terakir Tidak Boleh Kosong");
+            document.forms["formRegister"]["last_name"].focus();
+            return false;
+        }
+        if (document.forms["formRegister"]["email"].value == "") {
+            alert("Email Tidak Boleh Kosong");
+            document.forms["formRegister"]["email"].focus();
+            return false;
+        }
+        if (document.forms["formRegister"]["nik"].value == "") {
+            alert("NIK Tidak Boleh Kosong");
+            document.forms["formRegister"]["nik"].focus();
+            return false;
+        }
+        if (!nik.match(number)) {
+            alert("NIK Harus Angka");
+            return false;
+        }
+        if (nik.length !=16) {
+            alert("NIK Harus 16 Digit");
+            return false;
+        }
+        
+        if (document.forms["formRegister"]["no_hp"].value == "") {
+            alert("No Hp Tidak Boleh Kosong");
+            document.forms["formRegister"]["no_hp"].focus();
+            return false;
+        }
+        if (!no_hp.match(number)) {
+            alert("Nomor Hp Harus Angka");
+            return false;
+        }
+        if (no_hp.length !=12) {
+            alert("No Hp Harus 12 Digit");
+            return false;
+        }
+
+        if (document.forms["formRegister"]["password"].value == "") {
+            alert("Password Tidak Boleh Kosong");
+            document.forms["formRegister"]["password"].focus();
+            return false;
+        }
+        if (document.forms["formRegister"]["repassword"].value == "") {
+            alert("Ulangi Password Tidak Boleh Kosong");
+            document.forms["formRegister"]["repassword"].focus();
+            return false;
+        }
+
+
+
+
+
+
+
+    }
+</script>

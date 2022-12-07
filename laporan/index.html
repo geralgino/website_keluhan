@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    </script>    
+    <title>Document</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            getData()
+            getUser()
+            
+        })
+
+        var user = []
+       
+
+        async function getData() {
+            let response = await fetch("https://kkiz0wxz.directus.app/items/laporan");
+            response = await response.json();
+            var htm = ``                 
+
+
+            $.each(response.data, function (key, val) {
+                var first_name = ``
+                var last_name = ``
+                            
+
+
+                $.each(user, function (kl, vl) {
+                    
+                    if (val.id_user == vl.id_user) {
+                        first_name = vl.first_name
+                        last_name = vl.last_name
+                    }
+
+                })
+                
+
+
+                if (val.sifat_laporan == 'public') {
+                    htm += `
+                        <div class="card-body">
+                            <h5 class="card-title">${val.judul_laporan}</h5>                                                        
+                            <img src="https://kkiz0wxz.directus.app/assets/${val.foto}">
+                            
+                            <p class="card-text">Pelapor : ${first_name}</p>         
+                            <p class="card-text">Sifat Laporan : ${val.sifat_laporan}</p>                             
+                            <p class="card-text">Tanggal Kejadian : ${val.tanggal_laporan}</p>
+                            <a href="/laporan/detail_laporan.php?id=${val.id}" class="btn btn-primary">Detail</a>
+                        </div>
+                        
+                        `
+                }
+
+            })
+            $('#dt-api').html(htm)
+        }
+
+
+        function getUser() {
+            $.getJSON('https://kkiz0wxz.directus.app/users', function (r) {
+                $.each(r.data, function (k, v) {
+                    user.push({ id_user: v.id, first_name: v.first_name, last_name: v.last_name })
+                })
+            })
+        }
+       
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <!-- Navbar -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" id="dt-api">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- Footer -->
+
+</body>
+
+</html>
+<script>
+    $(function () {
+        $("#navbar").load("/navbar.html");
+        $("#footer").load("/footer.html");
+    });
+</script>
